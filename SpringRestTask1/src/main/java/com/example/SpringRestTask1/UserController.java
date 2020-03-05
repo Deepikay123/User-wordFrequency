@@ -60,8 +60,9 @@ public class UserController {
 		return output;
 	}
 		@PostMapping("/inputDetails/frequencyword")
-		public int getwordFrequeny(@RequestBody User user) {
+		public User getwordFrequeny(@RequestBody User user) {
 	  
+			user.setId(22);
 			String paragraph = user.getAbout();
 			
 			String emailline = user.getEmail();
@@ -85,7 +86,7 @@ public class UserController {
 		      }
 		      System.out.println("The string is: " + paragraph);
 		      System.out.println("The word " + output1 + " occurs " + count + " times in the above string");
-		      return count;  
+		      return user;  
 		}
 		
 	}
